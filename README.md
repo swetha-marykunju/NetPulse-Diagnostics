@@ -1,3 +1,5 @@
+[![Android CI](https://github.com/swetha-marykunju/NetPulse-Diagnostics/actions/workflows/android.yml/badge.svg)](https://github.com/swetha-marykunju/NetPulse-Diagnostics/actions/workflows/android.yml)
+
 Network Diagnostics
 
 A high performance Android utility that provides real-time network telemetry, combining low-level system pings with high level API metadata.
