@@ -1,28 +1,29 @@
+# NetPulse Diagnostics
+
 [![Android CI](https://github.com/swetha-marykunju/NetPulse-Diagnostics/actions/workflows/android.yml/badge.svg)](https://github.com/swetha-marykunju/NetPulse-Diagnostics/actions/workflows/android.yml)
 
-Network Diagnostics
+A high-performance Android utility providing real-time network telemetry, combining low-level system pings with high-level ISP metadata.
 
-A high performance Android utility that provides real-time network telemetry, combining low-level system pings with high level API metadata.
+## The Challenge
+Most network tools only show if you are connected. NetPulse correlates physical latency (ICMP) with geographic and ISP data to provide a comprehensive picture of network quality and history.
 
-The Challenge
+## Technical Implementation
+- **UI Architecture:** Built entirely with **Jetpack Compose** (Declarative UI), utilizing a single-activity architecture for a modern, fluid user experience.
+- **Pattern:** **MVVM** (Model-View-ViewModel) to ensure clean separation of concerns and testability.
+- **Networking:** - **Layer 3:** Raw Shell commands to calculate ICMP packet latency.
+    - **Layer 7:** Retrofit + GSON to fetch ISP and Geo-location data from REST APIs.
+- **Persistence:** **Room Database** with Kotlin Coroutines for offline storage and historical data tracking.
+- **Quality Assurance:** Integrated **JUnit 4** for unit testing business logic and **GitHub Actions** for CI/CD automation.
 
-Most network tools only show if you are connected. This app dives deeper, correlating physical latency (ICMP) with geographic and ISP data to give a full picture of network quality.
+## Key Libraries
+- **Jetpack Compose** (Material 3)
+- **Retrofit2** & Converter-GSON
+- **AndroidX Room** (Persistence)
+- **Kotlin Coroutines** (Asynchronous operations)
+- **AndroidX Lifecycle** (ViewModel, StateFlow/LiveData)
 
-Technical Implementation
-- Architecture: MVVM (Model-View-ViewModel) for a clean separation of concerns.
-- Networking: Layer 3: Raw Shell commands to calculate ICMP packet latency.
-- Layer 7: Retrofit + GSON to fetch ISP and Geo-location data from REST APIs.
-- Persistence: Room Database with Coroutines to store history without blocking the UI thread.
-- Reactive UI: LiveData observers ensure the UI stays in sync with background network tasks.
-
-Key Libraries
-- Retrofit2 & Converter-GSON
-- androidx.room (Room)
-- kotlinx-coroutines-android
-- androidx.lifecycle (ViewModel, LiveData)
-
-How to Run
+## How to Run
 1. Clone the repository.
 2. Open in Android Studio (Ladybug or newer).
 3. Ensure your device has internet access.
-4. Run the 'app' module.
+4. Build and run the 'app' module.
